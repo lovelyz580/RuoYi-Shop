@@ -25,7 +25,11 @@ public class OAwechatConfig {
 	public final static String WECHAT_GET_TEMPLATE_URL = "https://api.weixin.qq.com/cgi-bin/template/api_add_template"; // 获得模板消息的模板id
 	public final static String WECHAT_SEND_TEMPLATE_URL = "https://api.weixin.qq.com/cgi-bin/message/template/send"; // 发送模板消息
 	public final static String WECHAT_DELETE_TEMPLATE_URL = "https://api.weixin.qq.com/cgi-bin/template/del_private_template"; // 删除模板消息
-	
+
+	public static final String WECHAT_GET_MPOPENID_URL = "https://api.weixin.qq.com/sns/jscode2session"; // 获取openId的URL
+
+	public static final String WECHAT_GET_EXTENTSION_QRCODE_URL = "https://api.weixin.qq.com/wxa/getwxacode"; // 获取推广二维码的URL
+
 	/**
 	 * 微信相关配置
 	 */

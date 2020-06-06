@@ -4,12 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.ruoyi</groupId>
-	<artifactId>RuoYi</artifactId>
+	<artifactId>RuoYi-Shop</artifactId>
 	<version>3.2.0</version>
 	<packaging>jar</packaging>
 
-	<name>RuoYi</name>
-	<description>若依管理系统</description>
+	<name>RuoYi-Shop</name>
+	<description>若依-商城管理系统</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -126,6 +126,12 @@
 			<version>4.5.2</version>
 		</dependency>
 
+		<!--加密解密-->
+		<dependency>
+			<groupId>bouncycastle</groupId>
+			<artifactId>bcprov-jdk15</artifactId>
+			<version>140</version>
+		</dependency>
 		<dependency>
 			<groupId>net.sf.json-lib</groupId>
 			<artifactId>json-lib</artifactId>
