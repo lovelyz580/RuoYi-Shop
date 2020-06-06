@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.project.wechat.wechat.mapper.WechatMapper">
+    
+    <resultMap type="Wechat" id="WechatResult">
+        <result property="iD"    column="ID"    />
+        <result property="type"    column="Type"    />
+        <result property="appId"    column="AppId"    />
+        <result property="appSecret"    column="AppSecret"    />
+        <result property="mCHID"    column="MCHID"    />
+        <result property="aPI"    column="API"    />
+        <result property="accessToken"    column="AccessToken"    />
+        <result property="jsapiTicket"    column="JsapiTicket"    />
+        <result property="tokenBuildTime"    column="TokenBuildTime"    />
+        <result property="sessionKey"    column="session_key"    />
+        <result property="sessionBuildTime"    column="sessionBuildTime"    />
+        <result property="payIp"    column="PayIp"    />
+        <result property="payNotifyUrl"    column="PayNotifyUrl"    />
+    </resultMap>
+	
+	<sql id="selectWechatVo">
+        select ID, Type, AppId, AppSecret, MCHID, API, AccessToken, JsapiTicket, TokenBuildTime, session_key, sessionBuildTime, PayIp, PayNotifyUrl from pflm_wechat
+    </sql>
+	
+    <select id="selectWechatList" parameterType="Wechat" resultMap="WechatResult">
+        <include refid="selectWechatVo"/>
+        <where>  
+            <if test="iD != null "> and ID = #{iD}</if>
+             <if test="type != null  and type != '' "> and Type = #{type}</if>
+             <if test="appId != null  and appId != '' "> and AppId = #{appId}</if>
+             <if test="appSecret != null  and appSecret != '' "> and AppSecret = #{appSecret}</if>
+             <if test="mCHID != null  and mCHID != '' "> and MCHID = #{mCHID}</if>
+             <if test="aPI != null  and aPI != '' "> and API = #{aPI}</if>
+             <if test="accessToken != null  and accessToken != '' "> and AccessToken = #{accessToken}</if>
+             <if test="jsapiTicket != null  and jsapiTicket != '' "> and JsapiTicket = #{jsapiTicket}</if>
+             <if test="tokenBuildTime != null "> and TokenBuildTime = #{tokenBuildTime}</if>
+             <if test="sessionKey != null  and sessionKey != '' "> and session_key = #{sessionKey}</if>
+             <if test="sessionBuildTime != null "> and sessionBuildTime = #{sessionBuildTime}</if>
+             <if test="payIp != null  and payIp != '' "> and PayIp = #{payIp}</if>
+             <if test="payNotifyUrl != null  and payNotifyUrl != '' "> and PayNotifyUrl = #{payNotifyUrl}</if>
+         </where>
+    </select>
+    
+    <select id="selectWechatById" parameterType="Integer" resultMap="WechatResult">
+        <include refid="selectWechatVo"/>
+        where ID = #{iD}
+    </select>
+        
+    <insert id="insertWechat" parameterType="Wechat">
+        insert into pflm_wechat
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="iD != null  ">ID,</if>
+			<if test="type != null  and type != ''  ">Type,</if>
+			<if test="appId != null  and appId != ''  ">AppId,</if>
+			<if test="appSecret != null  and appSecret != ''  ">AppSecret,</if>
+			<if test="mCHID != null  and mCHID != ''  ">MCHID,</if>
+			<if test="aPI != null  and aPI != ''  ">API,</if>
+			<if test="accessToken != null  and accessToken != ''  ">AccessToken,</if>
+			<if test="jsapiTicket != null  and jsapiTicket != ''  ">JsapiTicket,</if>
+			<if test="tokenBuildTime != null  ">TokenBuildTime,</if>
+			<if test="sessionKey != null  and sessionKey != ''  ">session_key,</if>
+			<if test="sessionBuildTime != null  ">sessionBuildTime,</if>
+			<if test="payIp != null  and payIp != ''  ">PayIp,</if>
+			<if test="payNotifyUrl != null  and payNotifyUrl != ''  ">PayNotifyUrl,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="iD != null  ">#{iD},</if>
+			<if test="type != null  and type != ''  ">#{type},</if>
+			<if test="appId != null  and appId != ''  ">#{appId},</if>
+			<if test="appSecret != null  and appSecret != ''  ">#{appSecret},</if>
+			<if test="mCHID != null  and mCHID != ''  ">#{mCHID},</if>
+			<if test="aPI != null  and aPI != ''  ">#{aPI},</if>
+			<if test="accessToken != null  and accessToken != ''  ">#{accessToken},</if>
+			<if test="jsapiTicket != null  and jsapiTicket != ''  ">#{jsapiTicket},</if>
+			<if test="tokenBuildTime != null  ">#{tokenBuildTime},</if>
+			<if test="sessionKey != null  and sessionKey != ''  ">#{sessionKey},</if>
+			<if test="sessionBuildTime != null  ">#{sessionBuildTime},</if>
+			<if test="payIp != null  and payIp != ''  ">#{payIp},</if>
+			<if test="payNotifyUrl != null  and payNotifyUrl != ''  ">#{payNotifyUrl},</if>
+         </trim>
+    </insert>
+	 
+    <update id="updateWechat" parameterType="Wechat">
+        update pflm_wechat
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="type != null  and type != ''  ">Type = #{type},</if>
+            <if test="appId != null  and appId != ''  ">AppId = #{appId},</if>
+            <if test="appSecret != null  and appSecret != ''  ">AppSecret = #{appSecret},</if>
+            <if test="mCHID != null  and mCHID != ''  ">MCHID = #{mCHID},</if>
+            <if test="aPI != null  and aPI != ''  ">API = #{aPI},</if>
+            <if test="accessToken != null  and accessToken != ''  ">AccessToken = #{accessToken},</if>
+            <if test="jsapiTicket != null  and jsapiTicket != ''  ">JsapiTicket = #{jsapiTicket},</if>
+            <if test="tokenBuildTime != null  ">TokenBuildTime = #{tokenBuildTime},</if>
+            <if test="sessionKey != null  and sessionKey != ''  ">session_key = #{sessionKey},</if>
+            <if test="sessionBuildTime != null  ">sessionBuildTime = #{sessionBuildTime},</if>
+            <if test="payIp != null  and payIp != ''  ">PayIp = #{payIp},</if>
+            <if test="payNotifyUrl != null  and payNotifyUrl != ''  ">PayNotifyUrl = #{payNotifyUrl},</if>
+        </trim>
+        where ID = #{iD}
+    </update>
+
+	<delete id="deleteWechatById" parameterType="Integer">
+        delete from pflm_wechat where ID = #{iD}
+    </delete>
+	
+    <delete id="deleteWechatByIds" parameterType="String">
+        delete from pflm_wechat where ID in 
+        <foreach item="iD" collection="array" open="(" separator="," close=")">
+            #{iD}
+        </foreach>
+    </delete>
+    
+</mapper>
