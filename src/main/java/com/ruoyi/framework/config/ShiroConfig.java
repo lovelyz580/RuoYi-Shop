@@ -278,7 +278,7 @@ public class ShiroConfig
         filterChainDefinitionMap.put("/ruoyi/**", "anon");
         filterChainDefinitionMap.put("/druid/**", "anon");
         filterChainDefinitionMap.put("/profile/**", "anon");
-        filterChainDefinitionMap.put("/profile/upload/**", "anon");
+        filterChainDefinitionMap.put("/upload/**", "anon");
         filterChainDefinitionMap.put("/captcha/captchaImage**", "anon");
         // 退出 logout地址，shiro去清除session
         filterChainDefinitionMap.put("/logout", "logout");

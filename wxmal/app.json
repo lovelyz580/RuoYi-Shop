@@ -1,7 +1,9 @@
 {
   "pages": [
+    "pages/loco/index",
+        "pages/details/details",
     "pages/index/index",
-    "pages/details/details",
+
     "pages/classify/classify"
   ],
   "window": {
@@ -41,7 +43,7 @@
   ],
   "plugins": {
     "htmltowxml": {
-      "version": "1.3.1",
+      "version": "1.4.0",
       "provider": "wxa51b9c855ae38f3c"
     }
   },

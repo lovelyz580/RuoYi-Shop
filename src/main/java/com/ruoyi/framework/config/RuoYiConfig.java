@@ -20,6 +20,8 @@ public class RuoYiConfig
     private String copyrightYear;
     /** 上传路径 */
     private static String profile;
+    //访问地址
+    private static String onlineurl;
     /** 获取地址开关 */
     private static boolean addressEnabled;
 
@@ -86,5 +88,13 @@ public class RuoYiConfig
     public static String getUploadPath()
     {
         return profile + "upload/";
+    }
+
+    public static String getOnlineurl() {
+        return onlineurl;
+    }
+
+    public static void setOnlineurl(String onlineurl) {
+        RuoYiConfig.onlineurl = onlineurl;
     }
 }

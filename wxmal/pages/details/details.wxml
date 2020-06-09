@@ -36,14 +36,13 @@
   </view>
 </view>
 
-<poster id="poster" hide-loading="{{false}}" preload="{{true}}" config="{{posterConfig}}" bind:success="onPosterSuccess" bind:fail="onPosterFail">
-  
-</poster>
+
+<aposter id="aposterid" />
 
 
 <view class="cu-modal {{modalName=='Image'?'show':''}}">
   <view class="cu-dialog" >
-    <view class="bg-img" style="background-image: url('https://www.qinxuewu.club/profile/upload/qrcode.jpg');height:214px;width:217px;">
+    <view class="bg-img" style="background-image: url('http://lovevivian.com/images/wechatcode.jpg');height:214px;width:217px;">
       <view class="cu-bar justify-end text-white">
         <view class='action' bindtap='hideModal'>
           <!-- <text class='icon-close'></text> -->

@@ -7,7 +7,7 @@ import com.ruoyi.project.wechat.wechat.common.MPopenId;
 import com.ruoyi.project.wechat.wechat.common.OpenId;
 import com.ruoyi.project.wechat.wechat.domain.*;
 import com.ruoyi.project.wechat.wechat.service.IWechatService;
-import com.ruoyi.project.wechat.wechat.utils.QRCode.QrCodeUtils;
+import com.ruoyi.project.wechat.wechat.utils.QRCode.QrCodeUtil;
 import com.ruoyi.project.wechat.wechat.utils.WechatFormUtil;
 import com.ruoyi.project.wechat.wechat.utils.WechatGetUserInfoUtils;
 import org.apache.http.util.TextUtils;

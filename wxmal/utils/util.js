@@ -1,7 +1,5 @@
-const basePath = 'http://127.0.0.1:8080/';
-const imgViewPath = 'http://127.0.0.1:8080/profile/upload/';
-
-
+const basePath = 'https://lovevivian.com/ryshop/';
+const imgViewPath = 'https://lovevivian.com/ryshop/upload/';
 const formatTime = date => {
   const year = date.getFullYear()
   const month = date.getMonth() + 1

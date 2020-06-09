@@ -6,7 +6,7 @@
 	<groupId>com.ruoyi</groupId>
 	<artifactId>RuoYi-Shop</artifactId>
 	<version>3.2.0</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>RuoYi-Shop</name>
 	<description>若依-商城管理系统</description>
@@ -46,14 +46,17 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
-			<!--
 			 <exclusions>
                 <exclusion>
                     <artifactId>spring-boot-starter-tomcat</artifactId>
                     <groupId>org.springframework.boot</groupId>
                 </exclusion>
             </exclusions>
-             -->
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
 		</dependency>
 
 		<!-- SpringBoot 测试 -->
@@ -74,6 +77,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+
 
 		<!-- SpringBoot集成thymeleaf模板 -->
 		<dependency>

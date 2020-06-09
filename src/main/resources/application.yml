@@ -7,9 +7,13 @@ ruoyi:
   # 版权年份
   copyrightYear: 2020
   # 文件上传路径
-  profile: /home/RuoYi/profile/
+  #uploadFolder: /usr/local/upload
+#  profile: D:\Dask\Lovelyz\RuoYi-Shop\trunk\target\RuoYi-Shop\WEB-INF\classes\static\upload
+  profile: /usr/local/tomcat/webapps/ryshop/WEB-INF/classes/static/
   # 获取ip地址开关
   addressEnabled: true
+  onlineurl: https://lovevivian.com/ryshop
+#  onlineurl: http://localhost:8080
 
 # 开发环境配置
 server:

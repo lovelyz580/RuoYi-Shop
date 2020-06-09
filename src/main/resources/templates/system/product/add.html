@@ -83,7 +83,7 @@
     	        $.ajax({  
     	            data : formdata,  
     	            type : "POST",  
-    	            url : "/common/upload", //图片上传出来的url，返回的是图片上传后的路径，http格式  
+    	            url : "/ryshop/common/upload", //图片上传出来的url，返回的是图片上传后的路径，http格式
     	            cache : false,  
     	            contentType : false,  
     	            processData : false,  
@@ -106,7 +106,7 @@
    	 //普通图片上传
    	  var uploadInst = upload.render({
    	    elem: '#test1'
-   	    ,url: '/common/upload'
+   	    ,url: '/ryshop/common/upload'
    	    ,before: function(obj){
    	      //预读本地文件示例，不支持ie8
    	      obj.preview(function(index, file, result){

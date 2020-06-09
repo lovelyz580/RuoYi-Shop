@@ -1,4 +1,3 @@
-import Poster from '../../miniprogram_dist/poster/poster';
 const app = getApp();
 const util = require('../../utils/util.js');
 var id = 1;
@@ -14,8 +13,10 @@ Page({
     CustomBar: app.globalData.CustomBar,
   },
   onLoad: function (options) {
+    this.aposter = this.selectComponent('#aposterid');
     var that = this;
     id = options.id;
+    id=1;
     that.getDetails(id);
 
   },
@@ -40,42 +41,21 @@ Page({
    * 异步生成海报
    */
   onCreateOtherPoster() {
-    var jdConfig={
-      width: 750,             //画布宽度
-      height: 1280,           //画布高度
-      backgroundColor: '#fff', //画布颜色
-      debug: false,
-      blocks: [
-        { width: 690, height: 750, x: 30, y: 183, borderWidth: 2, borderColor: '#f0c2a0', borderRadius: 20 },
-        { width: 634, height: 74, x: 59, y: 770, backgroundColor: '#fff', opacity: 0.5, zIndex: 100 },
-      ],
-      texts: [
-        { x: 30, y: 70, baseLine: 'top', text: '发现一个好物，推荐给你呀', fontSize: 38, color: '#080808' },
-        { x: 92, y: 810, fontSize: 38, baseLine: 'middle', text: this.title, width: 570, lineNum: 1, color: '#8d8d8d', zIndex: 200, },
-        { x: 59, y: 895, baseLine: 'middle', text: [{ text: '¥'+this.price, fontSize: 36, color: '#ec1731', marginLeft: 30 }] },
-        { x: 360, y: 1065, baseLine: 'top', text: '长按识别小程序码', fontSize: 38, color: '#080808', },
-        { x: 360, y: 1123, baseLine: 'top', text: '超值好货一起拼', fontSize: 28, color: '#929292' },
-      ],
-      images: [
-        {
-          width: 634, height: 634, x: 59, y: 210,
-          url: this.logo, //商品图
-        },
-        {
-          width: 220, height: 220, x: 92, y: 1020,
-          url: 'https://www.qinxuewu.club/profile/upload/xcxqrcode.jpg',  //二维码
-        }
-      ]
-    }
-    this.setData({ posterConfig: jdConfig}, () => {
-      Poster.create(true);    // 入参：true为抹掉重新生成 
+    this.aposter.genPoster({
+      autoHeight: true,
+      productImg: 'http://img14.360buyimg.com/n1/jfs/t11389/290/2985708817/209753/ef3ac542/5cdcc7afNa56599fc.jpg', // short image
+      title: '标题',
+      price: '￥99',
+      avatar: '../avatar.jpg',
+      nickname: 'Feynman',
+      motto: '推荐你使用acanvas，享编程乐趣',
+      qrCode: 'https://mini.zyzygame.com/weapp/share?id=1',
+      genQrCode: true,
+      showLoading: true
     });
-
-
   },   
    onShareAppMessage() {
      return {
-      //  title: 'Sharon',
        path: '/pages/details/details?id=' + id
      }
   },
@@ -135,8 +115,8 @@ Page({
   },
   showQrcode:function(){
     wx.previewImage({
-      urls: ['https://www.qinxuewu.club/profile/upload/qrcode.jpg'],
-      current: 'https://www.qinxuewu.club/profile/upload/qrcode.jpg' // 当前显示图片的http链接      
+      urls: ['http://lovevivian.com/images/wechatcode.jpg'],
+      current: 'http://lovevivian.com/images/wechatcode.jpg' // 当前显示图片的http链接      
     })
   }
 })

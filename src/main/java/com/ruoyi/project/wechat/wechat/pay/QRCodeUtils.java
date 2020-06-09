@@ -20,11 +20,6 @@ public class QRCodeUtils {
 
 	private static final int BLACK = 0xFF000000;
 	private static final int WHITE = 0xFFFFFFFF;
-
-	private QRCodeUtils() {
-		
-	}
-
 	public static BufferedImage toBufferedImage(BitMatrix matrix) {
 		int width = matrix.getWidth();
 		int height = matrix.getHeight();

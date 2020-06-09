@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,8 +32,10 @@ public class CommonController
     /**
      * 文件上传路径
      */
-    public static final String UPLOAD_PATH = "/profile/upload/";
+    public static final String SHOW_PATH = "/upload/";
 
+    @Value("${ruoyi.profile}")
+    private String UPLOAD_PATH;
     @Autowired
     private ServerConfig serverConfig;
 
@@ -77,13 +80,22 @@ public class CommonController
         {
             // 上传文件路径
             String filePath = RuoYiConfig.getUploadPath();
+            System.out.println("服务器地址"+filePath);
             // 上传并返回新文件名称
             String fileName = FileUploadUtils.upload(filePath, file);
 //            String url = serverConfig.getUrl() + UPLOAD_PATH + fileName;
-            String url = "https://www.qinxuewu.club" + UPLOAD_PATH + fileName;
+            /*
+             * create by: lovelyz
+             * description:需要修改
+             * create time: 9:12 2020/6/9
+             * params：[file]
+             * @return： com.ruoyi.framework.web.domain.AjaxResult
+             */
+            String url = "https://lovevivian.com/ryshop"+ SHOW_PATH + fileName;
             AjaxResult ajax = AjaxResult.success();
             ajax.put("fileName", fileName);
             ajax.put("url", url);
+            System.out.println("上传地址"+url);
             return ajax;
         }
         catch (Exception e)
